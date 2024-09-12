@@ -11,8 +11,10 @@ datasource db {
 }
 
 model Smartphone {
-  name  String @id
-  model String @unique
-  Cpu   String
-  image Bytes //Armazena os dados binarios da imagem
+  imagemDoSmartphone Bytes
+  model              String @id @unique
+  nomeDoCelular      String
+  processador        String
+  binarios           String
+  androids           String
 }

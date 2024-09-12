@@ -1,24 +1,47 @@
-# Logs
-logs
-*.log
+# Node.js dependencies
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+package-lock.json
+yarn.lock
 
-node_modules
-dist
-dist-ssr
-*.local
+# Prisma
+prisma/.env
+prisma/migrations/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite-journal
+
+# Logs
+logs
+*.log
+logs/*
+
+# Sass cache
+.sass-cache/
+*.css.map
+
+# Build files
+dist/
+build/
+
+# OS-specific files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Electron cache and debugging files
+*.asar
+*.localstorage
+*.state
+
+# Misc
+.env
+.env.local
+.env.*.local

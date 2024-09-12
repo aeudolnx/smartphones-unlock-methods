@@ -9,28 +9,37 @@
     "singleQuote": true
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "electron": "electron .",
-    "start:electron": "npm run start & npm run electron"
+    "vite": "vite",
+    "start:electron": "npm run start & npm run electron",
+    "dev": "concurrently \"npm run server\" \"npm run electron\" \"npm run vite\"",
+    "server": "node ./src/backend/server.mjs",
+    "electron": "npx electron ."
+
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "express": "^4.20.0",
+    "formidable": "^3.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.77.8",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/formidable": "^3.4.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "concurrently": "^9.0.1",
     "electron": "^32.0.2",
     "electron-builder": "^25.0.5",
     "eslint": "^8.57.0",

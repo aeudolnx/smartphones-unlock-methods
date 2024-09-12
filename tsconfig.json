@@ -22,5 +22,5 @@
     "main.js",
     "preload.js",
     "vite.config.ts"
-  ]
+, "src/backend/server.mjs"  ]
 }

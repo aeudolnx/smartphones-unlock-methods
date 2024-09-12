@@ -9,8 +9,11 @@ const __dirname = dirname(__filename);
 function createWindow() {
   console.log('Criando janela...');
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 800,
+    resizable: false, // Impede redimensionamento
+    maximizable: false, // Impede maximização
+    fullscreenable: false, // Impede fullscreen
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,

@@ -25,15 +25,15 @@ export function SpecificationPhone() {
     <main className={styles.Container}>
       {dados.map((data) => {
         return (
-          <ul key={data.model}>
-            <li>
+          <ul className={styles.ulContainer} key={data.model}>
+            <div className={styles.imgContainer}>
               <img src={data.imagemDoSmartphone} alt={data.model} />
-            </li>
-            <li>{data.model}</li>
+            </div>
             <li>{data.nomeDoCelular}</li>
-            <li>{data.processador}</li>
-            <li>{data.binarios}</li>
-            <li>{data.androids}</li>
+            <li>Modelo: {data.model}</li>
+            <li>Processador: {data.processador}</li>
+            <li>Binarios disponiveis: {data.binarios}</li>
+            <li>Androids disponiveis: {data.androids}</li>
           </ul>
         );
       })}
