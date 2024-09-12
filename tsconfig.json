@@ -19,6 +19,8 @@
     ".eslintrc.cjs",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "main.js",
+    "preload.js",
     "vite.config.ts"
   ]
 }

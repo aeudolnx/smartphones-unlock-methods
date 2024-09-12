@@ -1,18 +1,42 @@
 import styles from './styles.module.scss';
-import Smartphone from '../../assets/imgs/A02-A022M.webp';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+interface Detalhes {
+  imagemDoSmartphone: string;
+  model: string;
+  nomeDoCelular: string;
+  processador: string;
+  binarios: string;
+  androids: string;
+}
+
 export function SpecificationPhone() {
+  const [dados, setDados] = useState<Detalhes[]>([]);
+  const url = 'http://localhost:3000/files';
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setDados(res.data);
+    });
+  }, []);
+
   return (
     <main className={styles.Container}>
-      <div className={styles.imgContainer}>
-        <img src={Smartphone} alt="A022M" />
-      </div>
-      <ul>
-        <li>Especificações do Celular</li>
-        <li>Modelo: A022M</li>
-        <li>Processador: MediaTek</li>
-        <li>Androids: 10, 11</li>
-        <li>Binarios: 1, 2, 3, 4</li>
-      </ul>
+      {dados.map((data) => {
+        return (
+          <ul key={data.model}>
+            <li>
+              <img src={data.imagemDoSmartphone} alt={data.model} />
+            </li>
+            <li>{data.model}</li>
+            <li>{data.nomeDoCelular}</li>
+            <li>{data.processador}</li>
+            <li>{data.binarios}</li>
+            <li>{data.androids}</li>
+          </ul>
+        );
+      })}
     </main>
   );
 }
