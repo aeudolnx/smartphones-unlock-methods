@@ -1,34 +1,19 @@
 import { useEffect, useState } from 'react';
-import styles from './styles.module.scss';
 import { Detalhes } from '../../app/App';
+import styles from './styles.module.scss';
+
 interface InputProps {
   dados: Detalhes[];
   setFilter: (filter: Detalhes[]) => void;
   setSelectedComponentId: (id: string | null) => void;
 }
+
 export function MenuBar({
   dados,
   setFilter,
   setSelectedComponentId,
 }: InputProps) {
   const [search, setSearch] = useState('');
-
-  // const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const value = e.target.value;
-  //   setSearch(value);
-
-  //   const lowerCasedQuery = value.toLowerCase();
-  //   const filtered = dados.filter(
-  //     (dado) =>
-  //       dado.model.toLowerCase().includes(lowerCasedQuery) ||
-  //       dado.nomeDoCelular.toLowerCase().includes(lowerCasedQuery),
-  //   );
-  //   setFilter(filtered);
-
-  //   // Pega o modelo mais próximo ou o primeiro modelo disponível
-  //   const selected = filtered.length > 0 ? filtered[0].model : null;
-  //   setSelectedComponentId(selected);
-  // };
 
   useEffect(() => {
     if (!search) {
@@ -47,21 +32,25 @@ export function MenuBar({
   }, [search, dados, setFilter]);
 
   useEffect(() => {
-    if (search.trim() === '') {
-      setFilter([]);
+    if (!search) {
+      setFilter([]); // Limpa a lista quando o input está vazio
       setSelectedComponentId(null); // Reseta o componente selecionado
     } else {
       const lowerCasedQuery = search.toLocaleLowerCase();
-      const filteredData = dados.filter((dado) =>
-        dado.nomeDoCelular.toLocaleLowerCase().includes(lowerCasedQuery),
-      );
-      setFilter(filteredData);
 
-      // Atualiza o componente selecionado com base no modelo encontrado
-      if (filteredData.length > 0) {
-        setSelectedComponentId(filteredData[0].model); // Exemplo de lógica
+      // Usa find() para pegar o primeiro item que coincida
+      const foundItem = dados.find(
+        (item) =>
+          item.nomeDoCelular.toLocaleLowerCase().includes(lowerCasedQuery) ||
+          item.model.toLocaleLowerCase().includes(lowerCasedQuery),
+      );
+
+      if (foundItem) {
+        setFilter([foundItem]); // Exibe somente o primeiro item encontrado
+        setSelectedComponentId(foundItem.model); // Atualiza o componente com base no modelo
       } else {
-        setSelectedComponentId(null); // Caso não encontre nada
+        setFilter([]); // Se nada for encontrado, limpa o estado de filtro
+        setSelectedComponentId(null); // Reseta o componente selecionado
       }
     }
   }, [search, dados, setFilter, setSelectedComponentId]);
