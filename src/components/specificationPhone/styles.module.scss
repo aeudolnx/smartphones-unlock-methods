@@ -31,7 +31,18 @@
       padding: 0.25rem;
       background-color: #c9c9c9;
     }
-
+    .download{
+      color: $color-secondary;
+      font-weight: bold;
+    }
+    .methods{
+      color: rgb(24, 190, 51);
+      font-weight: bold;
+    }
+    .process{
+      color: yellow;
+      font-weight: bold;
+    }
   }
 
   .WelcomeContainer{

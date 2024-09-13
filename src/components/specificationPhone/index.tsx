@@ -23,23 +23,38 @@ export function SpecificationPhone({ filter }: PhoneProps) {
               </div>
               <li>{data.nomeDoCelular}</li>
               <li>Modelo: {data.model}</li>
-              <li>Processador: {data.processador}</li>
-              <li>Binarios disponiveis: {data.binarios}</li>
+              <li className={styles.process}>
+                Processador: {data.processador}
+              </li>
+              <li>Binários disponiveis: {data.binarios}</li>
               <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
-              <li>Androids disponiveis: {data.androids}</li>
+              <li className={styles.methods}>
+                Modo Download (Desligado): Pressione Vol + e -, Insira Cabo USB
+              </li>
+              <li className={styles.methods}>
+                Formatação de fábrica (Desligado): Pressione Vol + e o botão de
+                Ligar, solte o botão de Ligar e pressione-o novamente quando
+                aparecer Samsung na tela.
+              </li>
+              <li>
+                Consultar IMEI:{' '}
+                <a
+                  href="https://www.consultaaparelhoimpedido.com.br/public-web/home?cid=590675"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://www.consultaaparelhoimpedido.com.br/public-web/home?cid=590675
+                </a>
+              </li>
+              <li className={styles.download}>
+                Métodos de remoção: Modo Download
+              </li>
+              <li>Binários removíveis: Todos</li>
+              <li>Binários não removíveis: Nenhum</li>
+              <li>Precisa diminuir rom: não</li>
+              <li>Programa para remover conta: UnlockTool</li>
+              <li>Programa para remover conta: UnlockTool</li>
+              <li>Programa para remover conta: UnlockTool</li>
             </ul>
           );
         })

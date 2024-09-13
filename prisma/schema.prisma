@@ -17,4 +17,11 @@ model Smartphone {
   processador        String
   binarios           String
   androids           String
+  downloadMode       String
+  factoryReset       String
+  unlockMethod       String
+  allowBinary        String
+  notAllowBinary     String
+  flashRom           String
+  program            String
 }
