@@ -12,8 +12,8 @@ datasource db {
 
 model Smartphone {
   imagemDoSmartphone Bytes
-  model              String @id @unique
-  nomeDoCelular      String
+  model              String
+  nomeDoCelular      String @id @unique
   processador        String
   binarios           String
   androids           String

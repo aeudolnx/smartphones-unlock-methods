@@ -1,6 +1,37 @@
-//@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 
 .Container{
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: $color-mediumGrey;
+  background-color: $color-primary;
+  h1{
+    color: red;
+  }
+  .imgContainer{
+    margin: 0 auto;
+    width: 90%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  imgContainer_2{
+    margin: 0 auto;
+    width: 90%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

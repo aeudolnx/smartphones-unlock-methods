@@ -2,10 +2,10 @@ import styles from './styles.module.scss';
 import EntrarModoDownload from '../../../assets/descriptionImgs/EntrarModoDownload.png';
 import modoDownload from '../../../assets/descriptionImgs/ModoDownload.png';
 
-export function TutorialA022M() {
+export function TutorialGinkgo2() {
   return (
-    <main className={styles.Container} id="A022M">
-      <h1>REMOVENDO CONTA SAMSUNG A02</h1>
+    <main className={styles.Container} id="Ginkgo 2">
+      <h1>REMOVENDO CONTA E TIRANDO MI ACCOUNT XIAOMI REDMI NOTE 8 GINKGO 2</h1>
       <span>
         Colocar o telefone em modo download, seja pelo aplicativo ou atraves de
         tutorial no Youtube

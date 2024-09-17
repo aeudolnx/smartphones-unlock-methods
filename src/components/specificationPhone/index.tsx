@@ -29,12 +29,10 @@ export function SpecificationPhone({ filter }: PhoneProps) {
               <li>Binários disponiveis: {data.binarios}</li>
               <li>Androids disponiveis: {data.androids}</li>
               <li className={styles.methods}>
-                Modo Download (Desligado): Pressione Vol + e -, Insira Cabo USB
+                Modo Download (Desligado): {data.downloadMode}
               </li>
               <li className={styles.methods}>
-                Formatação de fábrica (Desligado): Pressione Vol + e o botão de
-                Ligar, solte o botão de Ligar e pressione-o novamente quando
-                aparecer Samsung na tela.
+                Formatação de fábrica (Desligado): {data.factoryReset}
               </li>
               <li>
                 Consultar IMEI:{' '}
@@ -47,12 +45,12 @@ export function SpecificationPhone({ filter }: PhoneProps) {
                 </a>
               </li>
               <li className={styles.download}>
-                Métodos de remoção: Modo Download
+                Métodos de remoção: {data.unlockMethod}
               </li>
-              <li>Binários removíveis: Todos</li>
-              <li>Binários não removíveis: Nenhum</li>
-              <li>Precisa diminuir rom: não</li>
-              <li>Programa para remover conta: UnlockTool</li>
+              <li>Binários removíveis: {data.allowBinary}</li>
+              <li>Binários não removíveis: {data.notAllowBinary}</li>
+              <li>Precisa diminuir rom: {data.flashRom}</li>
+              <li>Programa para remover conta: {data.program}</li>
               <li>Programa para remover conta: UnlockTool</li>
               <li>Programa para remover conta: UnlockTool</li>
             </ul>
